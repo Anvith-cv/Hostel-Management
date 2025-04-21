@@ -1,10 +1,10 @@
-package com.hostelmanagement.model;
+package com.smarthostelmanagement.model;
 
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "wardens")
-public class Warden {
+@Table(name = "students")
+public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -12,11 +12,15 @@ public class Warden {
     @Column(name = "name", nullable = false)
     private String name;
 
+    @Column(name = "email", nullable = false, unique = true)
+    private String email;
+
     @Column(name = "phone_number", nullable = false)
     private String phoneNumber;
 
-    @Column(name = "email", nullable = false, unique = true)
-    private String email;
+    @ManyToOne
+    @JoinColumn(name = "room_id")
+    private Room room;
 
     // Getters and Setters
     public long getId() { return id; }
@@ -25,9 +29,12 @@ public class Warden {
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
 
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
+
     public String getPhoneNumber() { return phoneNumber; }
     public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
 
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
+    public Room getRoom() { return room; }
+    public void setRoom(Room room) { this.room = room; }
 }

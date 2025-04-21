@@ -1,4 +1,4 @@
-package com.hostelmanagement.model;
+package com.smarthostelmanagement.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
