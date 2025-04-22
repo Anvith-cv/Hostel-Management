@@ -25,17 +25,17 @@ public class AttendanceController {
     }
 
     @PostMapping
-    public Attendance create(@RequestBody Attendance attendance) {
-        return attendanceService.create(attendance);
+    public Attendance save(@RequestBody Attendance attendance) {  // Endpoint to save attendance
+        return attendanceService.save(attendance);
     }
 
     @PutMapping("/{id}")
     public Attendance update(@PathVariable Long id, @RequestBody Attendance attendance) {
-        return attendanceService.update(id, attendance);
+        return attendanceService.update(id, attendance);  // Endpoint to update attendance
     }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
-        attendanceService.delete(id);
+        attendanceService.delete(id);  // Endpoint to delete attendance
     }
 }

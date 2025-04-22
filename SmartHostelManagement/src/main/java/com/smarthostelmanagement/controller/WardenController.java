@@ -15,27 +15,28 @@ public class WardenController {
     private WardenService wardenService;
 
     @GetMapping
-    public List<Warden> getAll() {
-        return wardenService.getAll();
+    public List<Warden> getAllWardens() {
+        return wardenService.getAllWardens();
     }
 
     @GetMapping("/{id}")
-    public Warden getById(@PathVariable Long id) {
-        return wardenService.getById(id);
+    public Warden getWardenById(@PathVariable Long id) {
+        return wardenService.getWardenById(id);
     }
 
     @PostMapping
-    public Warden create(@RequestBody Warden warden) {
-        return wardenService.create(warden);
+    public Warden createWarden(@RequestBody Warden warden) {
+        return wardenService.saveWarden(warden);
     }
 
     @PutMapping("/{id}")
-    public Warden update(@PathVariable Long id, @RequestBody Warden warden) {
-        return wardenService.update(id, warden);
+    public Warden updateWarden(@PathVariable Long id, @RequestBody Warden warden) {
+        warden.setId(id);
+        return wardenService.saveWarden(warden);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
-        wardenService.delete(id);
+    public void deleteWarden(@PathVariable Long id) {
+        wardenService.deleteWarden(id);
     }
 }

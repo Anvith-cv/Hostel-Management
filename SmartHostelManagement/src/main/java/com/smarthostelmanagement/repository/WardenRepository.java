@@ -4,5 +4,5 @@ import com.smarthostelmanagement.model.Warden;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface WardenRepository extends JpaRepository<Warden, Long> {
-    // Add custom query methods here if needed
+    Warden findByEmail(String email);
 }

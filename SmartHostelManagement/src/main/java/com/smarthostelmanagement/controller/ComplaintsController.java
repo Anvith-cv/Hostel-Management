@@ -25,17 +25,17 @@ public class ComplaintsController {
     }
 
     @PostMapping
-    public Complaints create(@RequestBody Complaints complaints) {
-        return complaintsService.create(complaints);
+    public Complaints save(@RequestBody Complaints complaint) {  // Endpoint to save complaint
+        return complaintsService.save(complaint);
     }
 
     @PutMapping("/{id}")
-    public Complaints update(@PathVariable Long id, @RequestBody Complaints complaints) {
-        return complaintsService.update(id, complaints);
+    public Complaints update(@PathVariable Long id, @RequestBody Complaints complaint) {
+        return complaintsService.update(id, complaint);  // Endpoint to update complaint
     }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
-        complaintsService.delete(id);
+        complaintsService.delete(id);  // Endpoint to delete complaint
     }
 }

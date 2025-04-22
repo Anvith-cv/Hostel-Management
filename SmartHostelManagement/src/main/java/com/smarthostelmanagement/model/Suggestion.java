@@ -5,25 +5,50 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "suggestions")
 public class Suggestion {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "student_id", nullable = false)
-    private Student student;
+    @Column(name = "student_id", nullable = false)
+    private Long studentId;
 
-    @Column(name = "message", nullable = false)
-    private String message;
+    @Column(name = "suggestion_text", nullable = false)
+    private String suggestionText;
+
+    @Column(name = "date", nullable = false)
+    private String date;
 
     // Getters and Setters
-    public long getId() { return id; }
-    public void setId(long id) { this.id = id; }
+    public Long getId() {
+        return id;
+    }
 
-    public Student getStudent() { return student; }
-    public void setStudent(Student student) { this.student = student; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    public String getMessage() { return message; }
-    public void setMessage(String message) { this.message = message; }
+    public Long getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(Long studentId) {
+        this.studentId = studentId;
+    }
+
+    public String getSuggestionText() {
+        return suggestionText;
+    }
+
+    public void setSuggestionText(String suggestionText) {
+        this.suggestionText = suggestionText;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 }
-	

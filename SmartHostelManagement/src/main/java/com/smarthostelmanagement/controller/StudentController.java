@@ -25,17 +25,17 @@ public class StudentController {
     }
 
     @PostMapping
-    public Student create(@RequestBody Student student) {
-        return studentService.create(student);
+    public Student save(@RequestBody Student student) {  // Endpoint to save student
+        return studentService.save(student);
     }
 
     @PutMapping("/{id}")
     public Student update(@PathVariable Long id, @RequestBody Student student) {
-        return studentService.update(id, student);
+        return studentService.update(id, student);  // Endpoint to update student
     }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
-        studentService.delete(id);
+        studentService.delete(id);  // Endpoint to delete student
     }
 }

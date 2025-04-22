@@ -25,17 +25,17 @@ public class RoomController {
     }
 
     @PostMapping
-    public Room create(@RequestBody Room room) {
-        return roomService.create(room);
+    public Room save(@RequestBody Room room) {  // Endpoint to save room
+        return roomService.save(room);
     }
 
     @PutMapping("/{id}")
     public Room update(@PathVariable Long id, @RequestBody Room room) {
-        return roomService.update(id, room);
+        return roomService.update(id, room);  // Endpoint to update room
     }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
-        roomService.delete(id);
+        roomService.delete(id);  // Endpoint to delete room
     }
 }

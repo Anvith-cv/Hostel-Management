@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/messincharges")
+@RequestMapping("/api/messincharge")
 public class MessInchargeController {
 
     @Autowired
@@ -25,17 +25,17 @@ public class MessInchargeController {
     }
 
     @PostMapping
-    public MessIncharge create(@RequestBody MessIncharge messIncharge) {
-        return messInchargeService.create(messIncharge);
+    public MessIncharge save(@RequestBody MessIncharge messIncharge) {  // Endpoint to save mess incharge
+        return messInchargeService.save(messIncharge);
     }
 
     @PutMapping("/{id}")
     public MessIncharge update(@PathVariable Long id, @RequestBody MessIncharge messIncharge) {
-        return messInchargeService.update(id, messIncharge);
+        return messInchargeService.update(id, messIncharge);  // Endpoint to update mess incharge
     }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
-        messInchargeService.delete(id);
+        messInchargeService.delete(id);  // Endpoint to delete mess incharge
     }
 }

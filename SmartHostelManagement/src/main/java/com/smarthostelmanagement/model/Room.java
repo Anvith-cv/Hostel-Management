@@ -5,29 +5,50 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "rooms")
 public class Room {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
-    @Column(name = "room_number", nullable = false, unique = true)
+    @Column(name = "room_number", nullable = false)
     private String roomNumber;
 
     @Column(name = "capacity", nullable = false)
-    private int capacity;
+    private Integer capacity;
 
-    @Column(name = "occupied", nullable = false)
-    private int occupied;
+    @Column(name = "status", nullable = false)
+    private String status;  // e.g., Available, Occupied
 
     // Getters and Setters
-    public long getId() { return id; }
-    public void setId(long id) { this.id = id; }
+    public Long getId() {
+        return id;
+    }
 
-    public String getRoomNumber() { return roomNumber; }
-    public void setRoomNumber(String roomNumber) { this.roomNumber = roomNumber; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    public int getCapacity() { return capacity; }
-    public void setCapacity(int capacity) { this.capacity = capacity; }
+    public String getRoomNumber() {
+        return roomNumber;
+    }
 
-    public int getOccupied() { return occupied; }
-    public void setOccupied(int occupied) { this.occupied = occupied; }
+    public void setRoomNumber(String roomNumber) {
+        this.roomNumber = roomNumber;
+    }
+
+    public Integer getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(Integer capacity) {
+        this.capacity = capacity;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }

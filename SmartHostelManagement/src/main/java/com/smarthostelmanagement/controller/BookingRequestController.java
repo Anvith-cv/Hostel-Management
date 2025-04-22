@@ -25,8 +25,8 @@ public class BookingRequestController {
     }
 
     @PostMapping
-    public BookingRequest create(@RequestBody BookingRequest bookingRequest) {
-        return bookingRequestService.create(bookingRequest);
+    public BookingRequest save(@RequestBody BookingRequest bookingRequest) {  // Renamed from create to save
+        return bookingRequestService.save(bookingRequest);
     }
 
     @PutMapping("/{id}")
